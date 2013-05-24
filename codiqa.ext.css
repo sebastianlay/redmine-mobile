@@ -1,0 +1,17 @@
+h2 {
+	margin: 0.5em 0;
+}
+
+.ui-field-contain label.ui-slider {
+	display: inline-block;
+	margin-right: 1em;
+	vertical-align: text-bottom;
+}
+
+.ui-field-contain, fieldset.ui-field-contain {
+	border-width: 0;
+}
+
+.ui-header .custom-header {
+	overflow: visible;
+}
