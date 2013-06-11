@@ -1,0 +1,11 @@
+
+some interesting API-URIs:
+
+// infos about the current user
+/users/current.json
+
+// NUM open tickets for project with ID
+/issues.json?project_id=ID&limit=NUM
+
+// all projects
+/projects.json

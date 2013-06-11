@@ -15,3 +15,11 @@ h2 {
 .ui-header .custom-header {
 	overflow: visible;
 }
+
+#wrongcredentials {
+	display: none;
+}
+
+.wrongcredentials #wrongcredentials {
+	display: block;
+}
