@@ -10,14 +10,14 @@ $projects = $json->projects;
 
 <div data-role="page" id="projects">
 	<div data-theme="a" data-role="header">
-		<a href="index.php?logout=1" data-icon="arrow-l" data-transition="slide" data-direction="reverse">Logout</a> 
+		<a href="index.php?logout=1" data-icon="arrow-l" data-transition="none">Logout</a> 
 		<h3 class="right">Projekte</h3>
 	</div>
 	<div data-role="content">
 		<ul data-role="listview" data-divider-theme="a">
 			<?php foreach ($projects as $project) { ?>
 			<li data-theme="<?php echo empty($project->parent->name) ? 'b' : 'c'; ?>">
-				<a href="project.php?id=<?php echo $project->id; ?>" data-transition="slide">
+				<a href="project.php?id=<?php echo $project->id; ?>" data-transition="none">
 					<?php
 					echo $project->name;
 					$total = download('/projects/' . $project->identifier . '/issues.json?status_id=open&limit=1');
@@ -35,17 +35,17 @@ $projects = $json->projects;
 		<div data-role="navbar" data-iconpos="top">
 			<ul>
 				<li>
-					<a href="overview.php" data-transition="fade" data-theme="" data-icon="home">
+					<a href="overview.php" data-transition="none" data-theme="" data-icon="home">
 						Übersicht
 					</a>
 				</li>
 				<li>
-					<a href="projects.php" data-transition="fade" data-theme="" data-icon="bars" class="ui-btn-active ui-state-persist">
+					<a href="projects.php" data-transition="none" data-theme="" data-icon="bars" class="ui-btn-active ui-state-persist">
 						Projekte
 					</a>
 				</li>
 				<li>
-					<a href="profile.php" data-transition="fade" data-theme="" data-icon="gear">
+					<a href="profile.php" data-transition="none" data-theme="" data-icon="gear">
 						Profil
 					</a>
 				</li>

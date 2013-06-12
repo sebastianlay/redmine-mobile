@@ -10,9 +10,9 @@ $name = $issue->project->id;
 ?>
 <div data-role="page" id="issue">
 	<div data-theme="a" data-role="header">
-		<a href="" data-icon="arrow-l" data-transition="slide" data-direction="reverse" data-rel="back">Zurück</a>
+		<a href="" data-icon="arrow-l" data-transition="none" data-rel="back">Zurück</a>
 		<h3><?php echo $issue->tracker->name; ?></h3>
-		<a href="issue-edit.php?id=<?php echo $id; ?>" data-theme="b" data-icon="edit" data-transition="slide">Ändern</a>
+		<a href="issue-edit.php?id=<?php echo $id; ?>" data-theme="b" data-icon="edit" data-transition="none">Ändern</a>
 	</div>
 	<div data-role="content">
 		<h3><?php echo $issue->subject; ?></h3>

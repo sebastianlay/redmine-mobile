@@ -25,7 +25,7 @@ if(isset($_POST['submit']))
 ?>
 <div data-role="page" id="project">
 	<div data-theme="a" data-role="header">
-		<a href="" data-icon="arrow-l" data-transition="slide" data-direction="reverse" data-rel="back">Zurück</a>
+		<a href="" data-icon="arrow-l" data-transition="none" data-rel="back">Zurück</a>
 		<h3 class="right">Neues Ticket</h3>
 	</div>
 	<div data-role="content">

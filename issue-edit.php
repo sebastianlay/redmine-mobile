@@ -21,7 +21,7 @@ $issue = download('/issues/' . $id . '.json')->issue;
 ?>
 <div data-role="page" id="issue-edit">
 	<div data-theme="a" data-role="header">
-		<a href="" data-icon="arrow-l" data-transition="slide" data-direction="reverse" data-rel="back">Zurück</a>
+		<a href="" data-icon="arrow-l" data-transition="none" data-rel="back">Zurück</a>
 		<h3 class="right"><?php echo $issue->subject; ?></h3>
 	</div>
 	<div data-role="content">
