@@ -1,46 +1,56 @@
-<?php include "functions.inc.php"; ?>
-<?php include "header.inc.php"; ?>
+<?php
 
-<div data-role="page" id="profil">
+include "functions.inc.php";
+include "header.inc.php"; 
+
+$json = download('/users/current.json');
+$user = $json->user;
+
+?>
+
+<div data-role="page" id="profile">
 	<div data-theme="a" data-role="header">
-		<h3>
-			Profil
-		</h3>
-		<a href="profile.php" data-icon="check" data-theme="b" class="ui-btn-right">Speichern</a> 
+		<a href="index.php?logout=1" data-icon="arrow-l" data-transition="slide" data-direction="reverse">Logout</a> 
+		<h3>Profil</h3>
 	</div>
 	<div data-role="content">
-<form action="projects.php">
+		<form action="projects.php">
 			<div data-role="fieldcontain">
-				<label for="textinput1">
+				<label for="firstname">
 					Vorname
 				</label>
-				<input name="" id="textinput1" placeholder="Max" value="" type="text">
+				<input name="firstname" id="firstname" placeholder="Max" value="<?php echo $user->firstname; ?>" type="text">
 			</div>
 			<div data-role="fieldcontain">
-				<label for="textinput2">
+				<label for="lastname">
 					Nachname
 				</label>
-				<input name="" id="textinput2" placeholder="Mustermann" value="" type="text">
+				<input name="lastname" id="lastname" placeholder="Mustermann" value="<?php echo $user->lastname; ?>" type="text">
 			</div>
 			<div data-role="fieldcontain">
-				<label for="textinput3">
+				<label for="mail">
 					E-Mail-Adresse
 				</label>
-				<input name="" id="textinput3" placeholder="max@mustermann.de" value="" type="email">
+				<input name="mail" id="mail" placeholder="max@mustermann.de" value="<?php echo $user->mail; ?>" type="email">
 			</div>
+			<input data-icon="check" data-theme="b" value="speichern" id="submit" name="submit" type="submit"> 
 		</form>
 	</div>
 	<div data-theme="a" data-role="footer" data-position="fixed">
 		<div data-role="navbar" data-iconpos="top">
 			<ul>
 				<li>
+					<a href="overview.php" data-transition="fade" data-theme="" data-icon="home">
+						Übersicht
+					</a>
+				</li>
+				<li>
 					<a href="projects.php" data-transition="fade" data-theme="" data-icon="bars">
 						Projekte
 					</a>
 				</li>
 				<li>
-					<a href="profile.php" data-transition="fade" data-theme="" data-icon="gear"
-					class="ui-btn-active ui-state-persist">
+					<a href="profile.php" data-transition="fade" data-theme="" data-icon="gear" class="ui-btn-active ui-state-persist">
 						Profil
 					</a>
 				</li>

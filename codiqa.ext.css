@@ -23,3 +23,19 @@ h2 {
 .wrongcredentials #wrongcredentials {
 	display: block;
 }
+
+.ui-header .right {
+	margin-right: 0;
+}
+
+table {
+	width: 100%;
+}
+
+td:first-child {
+	font-weight: bold;
+}
+
+.comments .ui-li-desc {
+	white-space: normal;
+}

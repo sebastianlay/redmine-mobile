@@ -3,12 +3,10 @@
 
 <div data-role="page" id="index">
 	<div data-theme="a" data-role="header">
-		<h3 class="custom-header">
-			Redmine Mobile
-		</h3>
+		<h3 class="custom-header">Redmine Mobile</h3>
 	</div>
 	<div data-role="content">
-		<form action="projects.php" method="post" data-ajax="false">
+		<form action="overview.php" method="post" data-ajax="false">
 			<div class="ui-body ui-body-e" id="wrongcredentials">
 				<p>Zugangsdaten sind falsch!</p>
 			</div>
