@@ -1,10 +1,23 @@
 <?php
 
 include "functions.inc.php";
-include "header.inc.php"; 
+include "header.inc.php";
 
-$json = download('/users/current.json');
-$user = $json->user;
+$user = download('/users/current.json')->user;
+$updated = false;
+
+// update profile
+if(isset($_POST['submit']))
+{
+	$data = $_POST;
+	unset($data['submit']); // remove submit from post data
+	$data = array('user' => $data); // wrap in a nice "user"
+	$data = json_encode($data);
+	uploadJSON('/users/' . $user->id . '.json', $data, 'PUT');
+	$updated = true;
+}
+
+$user = download('/users/current.json')->user;
 
 ?>
 
@@ -14,7 +27,12 @@ $user = $json->user;
 		<h3>Profil</h3>
 	</div>
 	<div data-role="content">
-		<form action="projects.php">
+		<?php if($updated) { ?>
+		<div class="ui-body ui-body-e">
+			<p>Profil gespeichert.</p>
+		</div>
+		<?php } ?>
+		<form action="profile.php" method="post" data-ajax="false">
 			<div data-role="fieldcontain">
 				<label for="firstname">
 					Vorname
